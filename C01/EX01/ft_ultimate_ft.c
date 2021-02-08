@@ -3,7 +3,7 @@
 
 void	ft_ultimate_ft(int *********nbr)
 {
-	*********nbr = 30;
+	*********nbr = 42;
 }
 
 int main(void)
@@ -19,7 +19,7 @@ int main(void)
 	int ********ptr8;
 	int *********ptr9;
 
-	a = 10;
+	a = 21;
 	ptr1 = &a;
 	ptr2 = &ptr1;
 	ptr3 = &ptr2;
