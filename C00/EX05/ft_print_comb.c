@@ -1,9 +1,9 @@
 #include <unistd.h>
 #include <stdbool.h>
 
-void	ft_putchar(char sym)
+void	ft_putchar(char c)
 {
-	write(1, &sym, 1);
+	write(1, &c, 1);
 }
 
 void	ft_write_comb(char a, char b, char c, bool last)
@@ -36,11 +36,11 @@ void	ft_print_comb(void)
 			{
 				last = !(a == '7' && b == '8' && c == '9');
 				ft_write_comb(a, b, c, last);
-				c = c + 1;
+				c++;
 			}
-			b = b + 1;
+			b++;
 		}
-		a = a + 1;
+		a++;
 	}
 }
 

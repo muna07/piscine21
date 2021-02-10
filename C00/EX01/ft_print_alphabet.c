@@ -7,9 +7,9 @@ void	ft_putchar(char c)
 
 void	ft_print_alphabet(void)
 {
-	char sym = 'A';
+	char sym = 'a';
 
-	while (sym <= 'Z')
+	while (sym <= 'z')
 	{
 		ft_putchar(sym);
 		sym++;
@@ -20,6 +20,6 @@ int main(void)
 {
 	ft_print_alphabet();
 	ft_putchar('\n');
-	
+
 	return 0;
 }

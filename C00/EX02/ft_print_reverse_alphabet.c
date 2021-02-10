@@ -7,9 +7,9 @@ void	ft_putchar(char c)
 
 void	ft_print_reverse_alphabet(void)
 {
-	char sym = 'Z';
+	char sym = 'z';
 
-	while (sym >= 'A')
+	while (sym >= 'a')
 	{
 		ft_putchar(sym);
 		sym--;

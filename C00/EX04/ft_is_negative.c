@@ -15,9 +15,9 @@ void	ft_is_negative(int num)
 
 int main(void)
 {
-	ft_is_negative(5);
+	ft_is_negative(15);
 	ft_putchar('\n');
-	ft_is_negative(-5);
+	ft_is_negative(-13);
 	ft_putchar('\n');
 
 	return 0;
