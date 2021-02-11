@@ -21,7 +21,7 @@ void	ft_putnbr(int nb)
 		ft_putchar('2');
 		nb = 147483648;
 	}
-	
+
 	nbr = nb;
 	while ((nbr /= 10) > 0)
 		size *= 10;
@@ -34,23 +34,24 @@ void	ft_putnbr(int nb)
 	}
 }
 
-void	ft_div_mod(int a, int b, int *div, int *mod)
+int	ft_strlen(char *str)
 {
-	*div = a / b;
-	*mod = a % b;
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return i;
+
 }
 
 int main(void)
 {
-	int a = 10;
-	int b = 3;
-	int div;
-	int mod;
+	int lenght;
+	char name[] = {"Mukhammad"};
 
-	ft_div_mod(a, b, &div, &mod);
-	ft_putnbr(div);
-	ft_putchar('\t');
-	ft_putnbr(mod);
+	lenght = ft_strlen(name);
+	ft_putnbr(lenght);
 	ft_putchar('\n');
 
 	return 0;

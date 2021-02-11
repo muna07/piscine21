@@ -1,39 +1,75 @@
 #include <unistd.h>
-#include <stdio.h>
 
-void	ft_ultimate_ft(int *********nbr)
+void	ft_putchar(char c)
 {
-	*********nbr = 42;
+	write(1, &c, 1);
+}
+
+void	ft_putnbr(int nb)
+{
+	int nbr;
+	int size;
+
+	size = 1;
+
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = -nb;
+	}
+
+	if (nb == -2147483648)
+	{
+		ft_putchar('2');
+		nb = 147483648;
+	}
+	nbr = nb;
+
+	while ((nbr /= 10) > 0)
+		size *= 10;
+	nbr = nb;
+
+	while (size)
+	{
+		ft_putchar((char)(nbr / size) + '0');
+		nbr %= size;
+		size /= 10;
+	}
+}
+
+void	ft_ultimate_ft(int *********ptr)
+{
+	*********ptr = 21;
 }
 
 int main(void)
 {
-	int a;
-	int *ptr1;
-	int **ptr2;
-	int ***ptr3;
-	int ****ptr4;
-	int *****ptr5;
-	int ******ptr6;
-	int *******ptr7;
-	int ********ptr8;
-	int *********ptr9;
+	int num;
+	int *point1;
+	int **point2;
+	int ***point3;
+	int ****point4;
+	int *****point5;
+	int ******point6;
+	int *******point7;
+	int ********point8;
+	int *********point9;
 
-	a = 21;
-	ptr1 = &a;
-	ptr2 = &ptr1;
-	ptr3 = &ptr2;
-	ptr4 = &ptr3;
-	ptr5 = &ptr4;
-	ptr6 = &ptr5;
-	ptr7 = &ptr6;
-	ptr8 = &ptr7;
-	ptr9 = &ptr8;
+	num = 42;
+	point1 = &num;
+	point2 = &point1;
+	point3 = &point2;
+	point4 = &point3;
+	point5 = &point4;
+	point6 = &point5;
+	point7 = &point6;
+	point8 = &point7;
+	point9 = &point8;
 
-	printf("before: %d\n", a);
-
-	ft_ultimate_ft(ptr9);
-	printf("after: %d\n", a);
+	ft_ultimate_ft(point9);
+	ft_putnbr(num);
+	ft_putchar('\n');
 
 	return 0;
 }
+
