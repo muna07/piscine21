@@ -7,43 +7,42 @@ void	ft_putchar(char c)
 
 void	ft_putstr(char *str)
 {
-	int i;
+	int i = 0;
 
-	i = 0;
-	while(str[i] != 0)
+	while (str[i] != '\0')
 	{
-		write(1, (str + i), 1);
+		write(1, &str[i], 1);
 		i++;
 	}
 }
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int i;
-
-	i = 0;
-	while((src[i] != '\0') && (i < n))
+	unsigned int i = 0;
+	
+	while ((src[i] != '\0') && (i < n))
 	{
 		dest[i] = src[i];
 		i++;
 	}
-	while((dest[i] != '\0') && (i < n))
+
+	while ((dest[i] != '\0') && (i < n))
 	{
-		dest[i] = '\0';
+		dest[i] != '\0';
 		i++;
 	}
 
-	return dest;
+	return (dest);
 }
 
 int main(void)
 {
-	char s[] = {"hello21.hello21.hello21"};
-	char d[30];
-	char *point;
+	char	name[] = "Mukhammad.Amin.Ali";
+	char	copy[30];
+	char	*p;
 
-	point = ft_strncpy(d, s, 30);
-	ft_putstr(point);
+	p = ft_strncpy(copy, name, 30);
+	ft_putstr(p);
 	ft_putchar('\n');
 
 	return 0;

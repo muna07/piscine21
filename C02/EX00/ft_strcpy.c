@@ -7,37 +7,38 @@ void	ft_putchar(char c)
 
 void	ft_putstr(char *str)
 {
-	int i;
+	int i = 0;
 
-	i = 0;
-	while(str[i] != '\0')
+	while (str[i] != '\0')
 	{
-		write(1, (str + i), 1);
+		write(1, &str[i], 1);
 		i++;
 	}
 }
 
 char	*ft_strcpy(char *dest, char *src)
 {
-	int i;
+	int i = 0;
 
-	i = 0;
-	while(src[i])
+	while (src[i] != '\0')
 	{
 		dest[i] = src[i];
 		i++;
 	}
 	dest[i] = src[i];
 
-	return dest;
+	return (dest);
 }
 
-int main(void)
+int 	main(void)
 {
-	char s[] = {"Hello 21-School\n"};
-	char d[20];
-	char *point;
+	char name[] = "Mukhammad";
+	char copy[15];
+	char *p;
 
-	point = ft_strcpy(d, s);
-	ft_putstr(point);
-}	
+	p = ft_strcpy(copy, name);
+	ft_putstr(p);
+	ft_putchar('\n');
+
+	return 0;
+}
